@@ -13,7 +13,7 @@ const EXTRACTED_FONTS_DIR = path.join(DOWNLOADS_DIR, FONT_NAME);
 const EXTRACTED_ICONS_FILE = path.join(EXTRACTED_FONTS_DIR, 'style.css');
 
 (async () => {
-
+  
   fs.ensureDirSync(DOWNLOADS_DIR);
 
   const browser = await puppeteer.launch();
@@ -84,4 +84,7 @@ const EXTRACTED_ICONS_FILE = path.join(EXTRACTED_FONTS_DIR, 'style.css');
   await browser.close();
 
   console.log(`Fonts extracted to ${ICONS_FONTS_DIR}`);
+
+  return;
+  
 })();
