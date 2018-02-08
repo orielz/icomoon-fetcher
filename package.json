@@ -6,13 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Oriel Zaken",
+  "license": "MIT",
   "dependencies": {
     "chokidar": "^2.0.0",
     "fs-extra": "^5.0.0",
     "puppeteer": "^1.0.0",
     "underscore": "^1.8.3",
     "unzip": "^0.1.11"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orielz/icomoon-fetcher.git"
+  },
+  "keywords": [
+    "icomoon",
+    "fetch-icomoon",
+    "icomoon-api"
+  ],
+  "bugs": {
+    "url": "https://github.com/orielz/icomoon-fetcher/issues"
+  },
+  "homepage": "https://github.com/orielz/icomoon-fetcher#readme"
 }
