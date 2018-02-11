@@ -5,7 +5,7 @@ const unzip = require('unzip');
 const os = require('os');
 const chokidar = require('chokidar');
 const emoji = require('node-emoji')
-
+const args = process.argv.slice(2);
 const {idle, getMostRecentFileName, catchAsyncErrors, log} = require('./utils')
 const { URLS, SELECTORS } = require('./consts');
 const {ICOMOON_USER, ICOMOON_PASS, FONT_NAME, ICONS_FILE_PATH, ICONS_FONTS_DIR, OVERWRITE_FONTS_PATH} = process.env;
@@ -14,7 +14,6 @@ const EXTRACTED_FONTS_DIR = path.join(DOWNLOADS_DIR, FONT_NAME);
 const EXTRACTED_ICONS_FILE = path.join(EXTRACTED_FONTS_DIR, 'style.css');
 
 (async () => {
-  
   await fs.ensureDir(DOWNLOADS_DIR);
   
   const browser = await puppeteer.launch({haedless: false});
@@ -31,7 +30,7 @@ const EXTRACTED_ICONS_FILE = path.join(EXTRACTED_FONTS_DIR, 'style.css');
   emailField.click();
   emailField.type(ICOMOON_USER);
   await idle(500);
-  passField.type(ICOMOON_PASS);
+  passField.type(args[0] || ICOMOON_PASS);
   await idle(500);
   
   submitButton.click();
