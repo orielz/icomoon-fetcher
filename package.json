@@ -1,6 +1,6 @@
 {
   "name": "icomoon-fetcher",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Fetch icomoon icons",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "chokidar": "^2.0.0",
     "fs-extra": "^5.0.0",
     "node-emoji": "^1.8.1",
-    "puppeteer": "^1.0.0",
+    "puppeteer": "^1.3.0",
     "underscore": "^1.8.3",
     "unzip": "^0.1.11"
   },

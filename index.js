@@ -16,7 +16,7 @@ const EXTRACTED_ICONS_FILE = path.join(EXTRACTED_FONTS_DIR, 'style.css');
 (async () => {
   await fs.ensureDir(DOWNLOADS_DIR);
   
-  const browser = await puppeteer.launch({haedless: false});
+  const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage();
 
   await page._client.send('Page.setDownloadBehavior', {behavior: 'allow', downloadPath: DOWNLOADS_DIR});
@@ -41,9 +41,23 @@ const EXTRACTED_ICONS_FILE = path.join(EXTRACTED_FONTS_DIR, 'style.css');
 
   await catchAsyncErrors(() => page.goto(URLS.select));
   
-  (await catchAsyncErrors(() => page.waitForSelector(SELECTORS.selectFont, {visible: true}))).click();
-  
-  catchAsyncErrors(() => page.goto(URLS.selectFont, {timeout: 0}));
+  await catchAsyncErrors(() => page.waitForSelector(SELECTORS.selectFont, {visible: true}));
+
+  const fontInputs = await catchAsyncErrors(() => page.$$(SELECTORS.selectFont));
+
+  const fontNames = await Promise.all(fontInputs.map((input, idx) => page.$eval(`${SELECTORS.selectFont}:nth-child(${idx+1}) input`, el => el.value)));
+
+  const requiredFontIndex = fontNames.indexOf(FONT_NAME);
+
+  const requiredFontSelector = `${SELECTORS.selectFont}:nth-child(${requiredFontIndex+1}) .icon-right2`;
+
+  await page.$eval(requiredFontSelector, el => el.click());
+
+  await catchAsyncErrors(() => page.mainFrame().waitForFunction('window.location.href === "https://icomoon.io/app/#/select"'));
+
+  page.$eval(SELECTORS.selectAllFontsForDownloadButton, el => el.click());
+
+  await catchAsyncErrors(() => page.goto(URLS.selectFont, {timeout: 0}));
 
   const numOfFilesBeforeDownload = await catchAsyncErrors(() => fs.readdir(DOWNLOADS_DIR).length, `Unable to access ${DOWNLOADS_DIR}`);
   

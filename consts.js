@@ -9,7 +9,7 @@ module.exports = {
         emailInput: '#email-login',
         passwordInput: '#pass-login',
         submitButton: '#submit-login',
-        selectFont: '.icon-right2',
+        selectFont: 'ul.noListStyle li',
         downloadFont: 'button.btn4'
       }
 }
