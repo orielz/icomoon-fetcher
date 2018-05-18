@@ -7,9 +7,12 @@ It is very annoying to manually download, extract, and replace the files on ever
 The program will run automation that login to icomoon, download your icomoon library, extract the library and place it in your project directory
 
 ## Getting started
-Install with npm:
-
-    npm install icomoon-fetcher --save
+- Install with npm:
+    - ```npm install icomoon-fetcher --save```
+- Copy the .env.example file as .env
+- Edit the .env file and add your configuration
+- Run: 
+    - ```node index.js```
 
 ## Getting started
 
