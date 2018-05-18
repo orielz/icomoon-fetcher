@@ -13,11 +13,24 @@ Install with npm:
 
 ## Getting started
 
-Add these environment variables:
+Add these environment variables, you can add with the .env file:
 
-ICOMOON_USER=user@icomoono.com              - Your icomoon username
-ICOMOON_PASS=passw*rd                       - Your icomoon password
-ICONS_FILE_PATH=/Project/scss/icons.scss    - Icomoon icons file target
-ICONS_FONTS_DIR=/Project/assets/fonts       - Icomoon fonts dir target
-FONT_NAME=space-icons                       - Your icomoon library name
-OVERWRITE_FONTS_PATH='../fonts'             - (Optional) Path to replace the icons.scss fonts path
+```
+# Your icomoon username
+ICOMOON_USER=user@icomoon.com
+
+# Your icomoon password 
+ICOMOON_PASS=passw*rd
+
+# Your icomoon library name
+FONT_NAME=space-icons
+
+# Icomoon icons file target
+ICONS_FILE_PATH=/Project/scss/icons.scss
+
+# Icomoon fonts dir target
+ICONS_FONTS_DIR=/Project/assets/fonts
+
+# (Optional) Path to replace the icons.scss fonts path
+OVERWRITE_FONTS_PATH='../fonts'
+```
