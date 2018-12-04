@@ -7,17 +7,33 @@ It is very annoying to manually download, extract, and replace the files on ever
 The program will run automation that login to icomoon, download your icomoon library, extract the library and place it in your project directory
 
 ## Getting started
-Install with npm:
-
-    npm install icomoon-fetcher --save
+- Install with npm:
+    - ```npm install icomoon-fetcher --save```
+- Copy the .env.example file as .env
+- Edit the .env file and add your configuration
+- Run: 
+    - ```node index.js```
 
 ## Getting started
 
-Add these environment variables:
+Add these environment variables, you can add with the .env file:
 
-ICOMOON_USER=user@icomoono.com              - Your icomoon username
-ICOMOON_PASS=passw*rd                       - Your icomoon password
-ICONS_FILE_PATH=/Project/scss/icons.scss    - Icomoon icons file target
-ICONS_FONTS_DIR=/Project/assets/fonts       - Icomoon fonts dir target
-FONT_NAME=space-icons                       - Your icomoon library name
-OVERWRITE_FONTS_PATH='../fonts'             - (Optional) Path to replace the icons.scss fonts path
+```
+# Your icomoon username
+ICOMOON_USER=user@icomoon.com
+
+# Your icomoon password 
+ICOMOON_PASS=passw*rd
+
+# Your icomoon library name
+FONT_NAME=space-icons
+
+# Icomoon icons file target
+ICONS_FILE_PATH=/Project/scss/icons.scss
+
+# Icomoon fonts dir target
+ICONS_FONTS_DIR=/Project/assets/fonts
+
+# (Optional) Path to replace the icons.scss fonts path
+OVERWRITE_FONTS_PATH='../fonts'
+```
