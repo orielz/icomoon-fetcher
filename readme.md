@@ -1,4 +1,4 @@
-> A neat automation program to fetch icomoon fonts and place them in your project.
+> A neat automation program to fetch icomoon fonts and place them in your project!
 
 ## Why?
 It is very annoying to manually download, extract, and replace the files on every icon change
