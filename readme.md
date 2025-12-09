@@ -28,6 +28,7 @@ ICOMOON_PASS=passw*rd
 # Your icomoon library name
 FONT_NAME=space-icons
 
+heyy
 # Icomoon icons file target
 ICONS_FILE_PATH=/Project/scss/icons.scss
 
